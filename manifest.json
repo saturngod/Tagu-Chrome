@@ -1,0 +1,29 @@
+{
+    "name": "Tagu",
+    "version": "1.0.1",
+	"update_url": "http://clients2.google.com/service/update2/crx",
+    "manifest_version": 2,
+    "description": "Detect zawgyi and unicode.",
+	"content_scripts": [
+	    {
+	      "matches": ["http://*/*","https://*/*"],
+	      "js": ["zguni.js"],
+		  "run_at":"document_end",
+		  "all_frames":true
+	    }
+	  ],
+  "icons": { "16": "icon16.png",
+             "48": "icon48.png",
+			 "64": "icon.png",
+            "128": "icon128.png" },
+			
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "web_accessible_resources": [
+        "fonts/zawgyi.ttf",
+		"fonts/mon3.ttf"
+    ]
+}
